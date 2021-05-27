@@ -6,25 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/textoExibiçao"
+    <TextView
+        android:id="@+id/chooseANumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clique no botão"
+        android:text="Escolha um número entre 0 e 10"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.08" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="cliqueBotao"
+        android:onClick="getNumber"
         android:text="Jogar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textoExibiçao" />
+        app:layout_constraintTop_toBottomOf="@id/chooseANumber"
+        android:backgroundTint="@color/black"/>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        tools:text="Nenhum numero selecionado"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

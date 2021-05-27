@@ -1,9 +1,11 @@
 package com.hugorafaelcosta.randomnumbers
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +13,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun cliqueBotao(view:View){
-       var texto = findViewById<TextView>(R.id.textoExibiçao)
-        texto.setText("Texto alterado")
+    @SuppressLint("SetTextI18n")
+    fun getNumber(view:View){
+       var texto = findViewById<TextView>(R.id.resultado)
+
+       var numeroSorteado = Random().nextInt(11)
+        texto.text = "Numero sorteado é: $numeroSorteado "
     }
 }
